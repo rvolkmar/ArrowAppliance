@@ -50,9 +50,8 @@
 
       </div>
     </div>
-  </header>
 
-  <!-- MOBILE MENU -->
+    <!-- MOBILE MENU -->
   <nav class="mobile-nav flex sm:hidden">
           
     <div class="hidden">
@@ -65,6 +64,8 @@
       </ul>
     </div>
   </nav>
+
+  </header>
 
   <!-- HERO SECTION -->
   <section id="home" class="hero">
@@ -175,5 +176,13 @@
 
   btn.addEventListener("click", () => {
     menu.classList.toggle("hidden");
+  });
+
+  // listen for clicks outside the menu to close it
+  document.addEventListener("click", (event) => {
+    const isClickInside = menu.contains(event.target) || btn.contains(event.target);
+    if (!isClickInside) {
+      menu.classList.add("hidden");
+    }
   });
 </script>
