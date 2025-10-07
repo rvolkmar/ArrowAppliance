@@ -253,6 +253,16 @@ body {
   .logo {
     width: 175px;
   }
+  .deliverymen-img {
+    max-width: 350px;
+    object-position: center;
+  }
+  .whatweoffer-section {
+    width: 100vw;
+  }
+  .whatweoffer-content {
+    padding: 0.15rem;
+  }
 }
 
 /* Additional/misc styling */
