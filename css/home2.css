@@ -35,6 +35,7 @@ body {
   padding: 1rem 0;
 }
 .logo {
+  margin-left: 1rem;
   color: #d62828;
   font-size: 1.5rem;
   font-weight: bold;
@@ -42,6 +43,7 @@ body {
 .nav-links {
   list-style: none;
   display: flex;
+  margin-right: 1rem;
   gap: 1.5rem;
 }
 .nav-links a {
