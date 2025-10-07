@@ -36,8 +36,35 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
+
+      <div class="flex sm:hidden">
+
+      <!-- hamburger menu button -->
+      <div class="pr-3">
+        <button class="mobile-menu-button" aria-label="Toggle Mobile Menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+
+      </div>
     </div>
   </header>
+
+  <!-- MOBILE MENU -->
+  <nav class="mobile-nav flex sm:hidden">
+          
+    <div class="hidden">
+      <ul class="mobile-nav-links pl-4">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#brands">Brands</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#whatweoffer">What we offer</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
 
   <!-- HERO SECTION -->
   <section id="home" class="hero">
@@ -78,7 +105,9 @@
         <img src="images/misc/deliverymen.jpg" alt="Men delivering an appliance image" class="deliverymen-img shadow-lg rounded-xl" />
       </div>
       <div class="whatweoffer-content">
-        <h2 class="whatweofffer-heading text-2xl font-bold">What We Offer!</h2>
+        <div>
+            <h2 class="whatweofffer-heading text-2xl font-bold">What We Offer!</h2>
+        </div>
         <ul class="whatweoffer-list text-xl font-semibold leading-relaxed">
           <li>Delivery: Free within 5 miles of Bolivar city limits.</li>
           <li>Installation: We offer installation options to fit your needs.</li>
@@ -138,3 +167,13 @@
 
 </body>
 </html>
+
+<script>
+  // Mobile menu toggle
+  const btn = document.querySelector("button.mobile-menu-button");
+  const menu = document.querySelector("nav div.hidden");
+
+  btn.addEventListener("click", () => {
+    menu.classList.toggle("hidden");
+  });
+</script>
