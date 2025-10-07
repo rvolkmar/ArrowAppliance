@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arrow Appliance</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/home2.css" />
+  <script>
+    // the stores phone number
+    var phoneNumber = " (417)-777-5296";
+
+    // the stores addresss
+    var address = " 1805 W Broadway, Suite E, Bolivar MO 65613";
+
+    // DON'T EDIT BELOW UNLESS YOU KNOW WHAT YOU'RE DOING
+    window.onload = () => {
+      document.getElementById('address').innerHTML = address;
+      document.getElementById('phone').innerHTML = phoneNumber;
+    }
+
+  </script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container">
+      <img src="images/logos/blackandred.png" alt="Arrow Appliance" class="logo" />
+      <nav class="hidden sm:block">
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#brands">Brands</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#whatweoffer">What we offer</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h2>Your Home, Upgraded</h2>
+      <p>Reliable appliances from brands you trust, with service you can count on.</p>
+      <a href="#brands" class="btn">Explore Brands</a>
+    </div>
+  </section>
+
+  <!-- FEATURED BRANDS -->
+  <section id="brands" class="brands-section">
+    <h3 class="section-title">Featured Brands</h3>
+    <ul class="brand-list">
+      <li><img src="images/logos/ge.jpg" alt="GE" /></li>
+      <li><img src="images/logos/lg.png" alt="LG" /></li>
+      <li><img src="images/logos/frigidaire.png" alt="Frigidaire" /></li>
+      <li><img src="images/logos/samsung.png" alt="Samsung" /></li>
+    </ul>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about-section">
+    <div class="container about-content">
+      <img src="images/misc/the_team.jpg" alt="Showroom" class="about-img" />
+      <div class="font-semibold text-xl">
+        <h3>Quality & Service Since 2025</h3>
+        <p>At Arrow Appliance, we take pride in offering the best appliances for your home. From refrigerators to washers and dryers, we deliver quality, service, and reliability every step of the way.</p>
+        <p>Visit our showroom or contact our friendly team today.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE OFFER -->
+  <section id="whatweoffer" class="whatweoffer-section">
+    <div>
+      <div class="whatweoffer-img-container">
+        <img src="images/misc/deliverymen.jpg" alt="Men delivering an appliance image" class="deliverymen-img shadow-lg rounded-xl" />
+      </div>
+      <div class="whatweoffer-content">
+        <h2 class="whatweofffer-heading text-2xl font-bold">What We Offer!</h2>
+        <ul class="whatweoffer-list text-xl font-semibold leading-relaxed">
+          <li>Delivery: Free within 5 miles of Bolivar city limits.</li>
+          <li>Installation: We offer installation options to fit your needs.</li>
+          <li>Haul away: We can take your old appliance for you.</li>
+          <li>Price Match: We will price match stores within a 50 mile radius of Bolivar.</li>
+        </ul>
+        <div class="whatweoffer-footnote">
+          <p>*Some restrictions apply. Reach out to our team with your questions today!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact-section">
+    <h3 class="text-3xl font-semibold">Contact Us</h3>
+    <div class="contact-grid">
+      <form class="contact-form">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Message" rows="4" required></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+
+      <div class="contact-info">
+        <p><strong>Address:</strong><span id="address"></span></p>
+        <p><strong>Phone:</strong><span id="phone"></span></p>
+        <div class="flex hours_div">
+          <div class="grid grid-cols-[min-content_1fr_1fr] gap-0">
+            <div class="hours"><strong>Hours:</strong></div>
+              <div>
+                <p>
+                  Monday–Friday 9am–5pm<br />
+                  Saturday: 9am-12pm<br />
+                  Sunday: Closed
+                </p>
+              </div>
+        </p>
+          </div>
+        </div>
+        <!-- <p><strong>Hours:</strong><br />
+            Monday–Friday 9am–5pm<br />
+            Saturday: 9am-12pm<br />
+            Sunday: Closed
+        </p> -->
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="img_foot">
+        <img class="logofoot" src="images/logos/white.png" />
+    </div>
+    <p>&copy; 2025 Arrow Appliance. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

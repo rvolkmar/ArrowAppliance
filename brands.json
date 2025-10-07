@@ -1,0 +1,28 @@
+{
+    "manufacturers": [
+        {
+            "name": "GE",
+            "image": "images/logos/ge.png",
+            "website": "https://www.whirlpool.com/",
+            "country": "USA",
+            "details": "Well-known for reliable home appliances across major categories.",
+            "popular_models": ["WRS325SDHZ", "WFW560CHW"]
+        },
+        {
+            "name": "Elisii",
+            "image": "images/logos/elisii.png",
+            "website": "https://www.samsung.com/",
+            "country": "South Korea",
+            "details": "Large selection with a focus on smart features and sleek design.",
+            "popular_models": ["RF28R7351SG", "WA50R5400AV"]
+        },
+        {
+            "name": "Frigidaire",
+            "image": "images/logos/frigidaire.png",
+            "website": "https://www.lg.com/",
+            "country": "South Korea",
+            "details": "Known for innovative technology in laundry and refrigeration.",
+            "popular_models": ["LRFXS2503S", "WM3900HWA"]
+        }
+    ]
+}

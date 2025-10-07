@@ -1,0 +1,271 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", Roboto, sans-serif;
+  color: #333;
+  background-color: #fafafa;
+  line-height: 1.6;
+}
+
+/* CONTAINERS */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* HEADER */
+.header {
+  background: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+.logo {
+  color: #d62828;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+.nav-links a {
+  position: relative;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-links a:hover {
+  color: #d62828;
+}
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  height: 2px;
+  width: 0%;
+  background-color: red;
+  transition: all 0.5s ease;
+}
+.nav-links a:hover::after {
+  width: 100%;
+  transition: all 0.5s ease;
+}
+/* HERO */
+.hero {
+  background: url("../images/misc/showroom_example.jpg") center/cover no-repeat;
+  color: white;
+  text-align: center;
+  padding: 8rem 1rem;
+  overflow: hidden;
+  transition: all 0.7s ease;
+}
+.hero:hover {
+  transform: scale(1.005);
+  transition: all 0.7s ease;
+}
+.hero-content {
+  background-color: rgba(0,0,0,0.90);
+  display: inline-block;
+  padding: 2rem 3rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+.hero-content:hover {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.90);
+    transition: all 0.3s ease;
+}
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.btn {
+  display: inline-block;
+  background: #d62828;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  margin-top: 1rem;
+}
+.btn:hover {
+  background: #a61b1b;
+}
+
+/* BRANDS */
+.brands-section {
+  background: #fff;
+  text-align: center;
+  padding: 4rem 1rem;
+}
+.section-title {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
+.brand-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+.brand-list li {
+  width: 150px;
+  height: 150px;
+  background: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+.brand-list li:hover {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    transform: scale(1.11);
+    transition: all 0.3 ease;
+}
+.brand-list img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* ABOUT */
+.about-section {
+  background: #fcf8f7;
+  padding: 4rem 1rem;
+}
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+}
+.about-img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* WHAT WE OFFER */
+.whatweoffer-section {
+  width: 90vw;
+  background: rgba(255, 248, 248, 0.5);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.whatweoffer-heading {
+  
+}
+.whatweoffer-content {
+  text-align: left;
+  width: 80vw;
+  margin: 0 auto;
+  padding: 5rem;
+}
+.whatweoffer-img-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+.deliverymen-img {
+  margin: 0 auto;
+  object-position: right;
+  max-width: 500px;
+  margin-left: auto;
+}
+
+/* CONTACT */
+.contact-section {
+  background: white;
+  padding: 4rem 1rem;
+  text-align: center;
+}
+.contact-section h3{
+  margin-bottom: 5rem;
+}
+.contact-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 300px;
+}
+.contact-form input,
+.contact-form textarea {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: inherit;
+}
+.contact-info {
+  max-width: 500px;
+  text-align: left;
+  line-height: 1.8;
+}
+.hours {
+  padding-right: 3px;
+}
+
+/* FOOTER */
+.footer {
+  background: #d62828;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 768px) {
+  .hero h2 {
+    font-size: 2rem;
+  }
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .logo {
+    width: 175px;
+  }
+}
+
+/* Additional/misc styling */
+.logo {
+    max-width: 300px;
+}
+
+.img_foot {
+    width: 90vw;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.logofoot {
+    max-width: 200px;
+    background-color: puprle;
+    margin: 0 auto;
+}

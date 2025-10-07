@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>404 — Arrow Appliances</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Tailwind Play CDN for quick prototyping -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: { colors: { brand: '#003366' } }
+      }
+    }
+  </script>
+</head>
+<body class="min-h-screen flex flex-col">
+  <header class="bg-brand text-white">
+    <div class="max-w-5xl mx-auto px-4 py-6 flex items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <img src="logo.png" alt="Arrow Appliances Logo" class="h-12 w-auto hidden sm:block">
+        <div>
+          <h1 class="text-xl sm:text-2xl font-semibold">Arrow Appliances</h1>
+          <p class="text-sm opacity-90">Quality appliances for your home</p>
+        </div>
+      </div>
+      <nav class="hidden md:flex items-center space-x-6">
+        <a href="/home.html" class="text-white hover:underline">Home</a>
+        <a href="#" class="text-white hover:underline">Products</a>
+        <a href="#" class="text-white hover:underline">Services</a>
+        <a href="#" class="text-white hover:underline">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="flex-grow flex items-center justify-center px-4 py-12">
+    <div class="max-w-3xl text-center">
+      <h2 class="text-6xl md:text-7xl font-extrabold text-brand">404</h2>
+      <p class="mt-4 text-xl md:text-2xl text-gray-700">Sorry — the page you were looking for could not be found.</p>
+      <p class="mt-2 text-gray-600">It may have been moved, renamed, or never existed.</p>
+      <div class="mt-6 flex justify-center gap-4">
+        <a href="/home.html" class="inline-block bg-brand text-white px-5 py-3 rounded-md hover:bg-brand/90">Return to Home</a>
+        <a href="javascript:history.back()" class="inline-block border border-gray-300 px-5 py-3 rounded-md text-gray-700 hover:bg-gray-50">Go Back</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-brand text-white mt-8">
+    <div class="max-w-5xl mx-auto px-4 py-6 text-center text-sm">
+      <img src="logo.png" alt="Arrow Appliances Logo" class="h-10 w-auto mx-auto mb-2">
+      &copy; 2024 Arrow Appliances. All rights reserved.<br>
+      1913 W Broadway St, Suite B, Bolivar, MO 65613 | (555) 123-4567
+    </div>
+  </footer>
+</body>
+</html>

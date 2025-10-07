@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Arrow Appliances - Home</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Tailwind Play CDN for quick prototyping -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            // Optional: customize Tailwind config (colors, etc.)
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            brand: '#003366'
+                        }
+                    }
+                }
+            }
+        </script>
+        <!-- Project stylesheet (loads after Tailwind so it can override if needed) -->
+        <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+    <header class="text-white shadow-sm">
+        <div class="max-w-5xl mx-auto px-4 py-6 flex items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <img src="images/logos/whtie.png" alt="Arrow Appliances Logo" class="h-12 w-auto bloc">
+                <!-- <div>
+                    <h1 class="text-xl sm:text-2xl font-semibold">Arrow Appliances</h1>
+                    <p class="text-sm opacity-90">Quality appliances for your home</p>
+                </div> -->
+            </div>
+            <nav class="hidden md:flex items-center space-x-6">
+                <a href="home.html" class="text-white">Home</a>
+                <a href="products.html" class="text-white">Products</a>
+                <a href="#" class="text-white">Services</a>
+                <a href="#" class="text-white">Contact</a>
+            </nav>
+            <!-- Mobile nav button -->
+            <div class="md:hidden">
+                <button id="menu-btn" class="text-white" aria-label="Open menu">☰</button>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden bg-brand/95 hidden">
+            <div class="px-4 pb-4 space-y-2">
+                <a href="#" class="block text-white py-2">Home</a>
+                <a href="#" class="block text-white py-2">Products</a>
+                <a href="#" class="block text-white py-2">Services</a>
+                <a href="#" class="block text-white py-2">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-8">
+        <div class="bg-white shadow-sm rounded-lg p-6 md:p-10">
+            <h2 class="text-brand text-2xl md:text-3xl font-bold">Welcome to Arrow Appliances</h2>
+            <p class="mt-4 text-gray-700 text-base md:text-lg">Your trusted source for quality home appliances. We offer a wide range of products including refrigerators, washing machines, ovens, and more from top brands. Our friendly staff is here to help you find the perfect appliance for your home.
+            </p>
+
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+                <section class="md:col-span-2">
+                    <h3 class="text-lg font-semibold text-brand">Store Information</h3>
+                    <div class="mt-3 text-gray-700">
+                        <p class="font-medium">Address</p>
+                        <p>1913 W Broadway St, Suite B, Bolivar, MO 65613</p>
+                        <p class="mt-3"><span class="font-medium">Phone:</span> (555) 123-4567</p>
+                        <p><span class="font-medium">Email:</span> info@arrowappliances.com</p>
+                    </div>
+
+                    <h3 class="text-lg font-semibold text-brand mt-6">Hours</h3>
+                    <ul class="list-disc list-inside mt-2 text-gray-700">
+                        <li>Monday - Friday: 9:00 AM - 5:00 PM</li>
+                        <li>Saturday: 9:00 AM - 12:00 PM</li>
+                        <li>Sunday: Closed</li>
+                    </ul>
+                </section>
+
+                <!-- <aside class="bg-gray-50 p-4 rounded-md">
+                    <h3 class="text-lg font-semibold text-brand">Featured Brands</h3>
+                    <!-- Keep static items as a no-JS fallback; script below will replace contents when brands.json is available
+                    <ul id="brands-list" class="mt-3 space-y-1 text-gray-700">
+                        <li>Whirlpool</li>
+                        <li>Samsung</li>
+                        <li>LG</li>
+                        <li>GE Appliances</li>
+                        <li>Bosch</li>
+                    </ul>
+                </aside> -->
+
+                <aside class="flex bg-red-50 p-5 rounded-md shadow-lg">
+
+                    <div class="text-center mx-auto">
+
+                        <h3 class="text-4xl md:text-2xl font-semibold mb-5">Featured Brands</h3>
+                        <ul id="" class="grid gap-4">
+                            <li class="featured-brand-img"><img src="images/logos/ge.jpg" alt="GE" /></li>
+                            <li class="featured-brand-img"><img src="images/logos/elisii.jpg" alt="Elisii" /></li>
+                            <li class="featured-brand-img"><img src="images/logos/frigidaire.png" alt="Frigidaire" /></li>
+                        </ul>
+
+                    </div>
+                    
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-white mt-8">
+        <div class="max-w-5xl mx-auto px-4 py-6 text-center text-sm">
+            <img src="images/logos/whtie.png" alt="Arrow Appliances Logo" class="h-10 w-auto mx-auto mb-2">
+            &copy; 2024 Arrow Appliances. All rights reserved.<br>
+            1913 W Broadway St, Suite B, Bolivar, MO 65613 | (555) 123-4567
+        </div>
+    </footer>
+
+    <script>
+      // Simple mobile menu toggle
+      const btn = document.getElementById('menu-btn');
+      const menu = document.getElementById('mobile-menu');
+      btn && btn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+      });
+    </script>
+            <script>
+                // Populate Featured Brands from brands.json (supports both simple string arrays
+                // and richer object arrays: { name, image, website, details, popular_models })
+                (function populateBrands(){
+                    const listEl = document.getElementById('brands-list');
+                    if(!listEl) return;
+
+                    const clear = () => { listEl.innerHTML = ''; };
+
+                    const renderStringList = (arr) => {
+                        clear();
+                        arr.forEach(name => {
+                            const li = document.createElement('li');
+                            li.textContent = name;
+                            listEl.appendChild(li);
+                        });
+                    };
+
+                    const renderObjectList = (arr) => {
+                        clear();
+                        arr.forEach(b => {
+                            const li = document.createElement('li');
+                            li.className = 'flex items-start gap-3';
+
+                            // logo (if provided)
+                            if(b.image) {
+                                const img = document.createElement('img');
+                                img.src = b.image;
+                                img.alt = b.name + ' logo';
+                                img.className = 'h-6 w-auto mt-0.5';
+                                li.appendChild(img);
+                            }
+
+                            const meta = document.createElement('div');
+                            meta.className = 'text-gray-700';
+
+                            // name (link if website provided)
+                            if(b.website) {
+                                const a = document.createElement('a');
+                                a.href = b.website;
+                                a.target = '_blank';
+                                a.rel = 'noopener noreferrer';
+                                a.textContent = b.name;
+                                a.className = 'font-medium text-brand hover:underline';
+                                meta.appendChild(a);
+                            } else {
+                                const s = document.createElement('div');
+                                s.textContent = b.name;
+                                s.className = 'font-medium text-brand';
+                                meta.appendChild(s);
+                            }
+
+                            // details (short)
+                            if(b.details) {
+                                const d = document.createElement('div');
+                                d.textContent = b.details;
+                                d.className = 'text-sm text-gray-600';
+                                meta.appendChild(d);
+                            }
+
+                            // small list of popular models
+                            if(Array.isArray(b.popular_models) && b.popular_models.length){
+                                const p = document.createElement('div');
+                                p.className = 'text-xs text-gray-500 mt-1';
+                                p.textContent = 'Popular: ' + b.popular_models.join(', ');
+                                meta.appendChild(p);
+                            }
+
+                            li.appendChild(meta);
+                            listEl.appendChild(li);
+                        });
+                    };
+
+                    // default fallback data (kept small)
+                    const fallbackStrings = ['Whirlpool','Samsung','LG','Bosch','GE Appliances'];
+
+                    fetch('brands.json')
+                        .then(res => {
+                            if(!res.ok) throw new Error('Fetch failed');
+                            return res.json();
+                        })
+                        .then(data => {
+                            const items = data && data.manufacturers ? data.manufacturers : null;
+                            if(!items) return renderStringList(fallbackStrings);
+
+                            if(items.length && typeof items[0] === 'string') {
+                                renderStringList(items);
+                            } else if(items.length && typeof items[0] === 'object') {
+                                renderObjectList(items);
+                            } else {
+                                renderStringList(fallbackStrings);
+                            }
+                        })
+                        .catch(() => {
+                            // could not fetch; render fallback strings
+                            renderStringList(fallbackStrings);
+                        });
+                })();
+            </script>
+</body>
+</html>
