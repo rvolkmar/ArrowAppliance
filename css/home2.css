@@ -58,16 +58,21 @@ body {
 .nav-links a::after {
   content: "";
   position: absolute;
-  left: 0;
+  left: 50%;
   bottom: -5px;
   height: 2px;
-  width: 0%;
+  width: 100%;
   background-color: red;
-  transition: all 0.5s ease;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  transition: all 0.6s ease;
 }
 .nav-links a:hover::after {
+  /* right: 0;
+  left: 0;
   width: 100%;
-  transition: all 0.5s ease;
+  transition: all 0.5s ease; */
+  transform: translateX(-50%) scaleX(1);
 }
 
 /* MOBILE NAVIGATION */
@@ -168,13 +173,15 @@ body {
   justify-content: center;
   align-items: center;
   border-radius: 8px;
+  overflow: hidden; /* Ensures images don't overflow */
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  transition: all 0.3s ease;
+  transition: all 0.7s ease;
 }
 .brand-list li:hover {
     box-shadow: 0 2px 5px rgba(0,0,0,0.5);
     transform: scale(1.11);
-    transition: all 0.3 ease;
+    /* transform: rotateZ(360deg); */
+    transition: all 0.7 ease;
 }
 .brand-list img {
   max-width: 100%;
@@ -257,6 +264,11 @@ body {
   border-radius: 4px;
   font-family: inherit;
 }
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #d62828;
+  outline: none;
+}
 .contact-info {
   max-width: 500px;
   text-align: left;
@@ -301,6 +313,26 @@ body {
   .whatweoffer-content {
     padding: 0.15rem;
   }
+}
+
+/* TO TOP BUTTON */
+#toTopBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: #d62828; /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+}
+#toTopBtn:hover {
+    background-color: #555; /* Add a dark-grey background on hover */
 }
 
 /* Additional/misc styling */

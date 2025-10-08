@@ -7,21 +7,25 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="css/home2.css" />
   <script>
+
+    // DON'T EDIT ABOVE UNLESS YOU KNOW WHAT YOU'RE DOING -----------------------
+    // THINGS YOU CAN MODIFY IF NEEDED BELOW -------------------------------------
+
     // the stores phone number
-    var phoneNumber = " (417)-777-5296";
+    var phoneNumber = "(417)-777-5296";
 
     // the stores addresss
-    var address = " 1805 W Broadway, Suite E, Bolivar MO 65613";
+    var address = "1805 W Broadway, Suite E, Bolivar MO 65613";
 
-    // DON'T EDIT BELOW UNLESS YOU KNOW WHAT YOU'RE DOING
+    // DON'T EDIT BELOW UNLESS YOU KNOW WHAT YOU'RE DOING -----------------------
     window.onload = () => {
-      document.getElementById('address').innerHTML = address;
-      document.getElementById('phone').innerHTML = phoneNumber;
+      document.getElementById('address').innerHTML = ' ' + address;
+      document.getElementById('phone').innerHTML = ' ' + phoneNumber;
     }
 
   </script>
 </head>
-<body>
+<body id="top">
 
   <!-- HEADER -->
   <header class="header">
@@ -158,6 +162,14 @@
     </div>
   </section>
 
+  <!-- FLOATING TO TOP BUTTON UPON SCROLLING DOWN -->
+  <a href="#top" class="to-top-button" aria-label="Back to Top">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+    </svg>
+  </a>
+  
+
   <!-- FOOTER -->
   <footer class="footer">
     <div class="img_foot">
@@ -185,4 +197,6 @@
       menu.classList.add("hidden");
     }
   });
+
+
 </script>
