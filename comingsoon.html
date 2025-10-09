@@ -39,7 +39,7 @@
     </div>
   <script>
     window.onload = () => {
-      document.querySelector('#address').innerHTML = `Adress: <br /> ${address} <br />`;
+      document.querySelector('#address').innerHTML = `Address: <br /> ${address} <br />`;
       document.querySelector('#phone').innerHTML = `Phone: <br /> ${phoneNumber}`;
       document.querySelector('.call-link').href = `tel:${phoneNumber.replace(/[^0-9]/g, '')}`;
     }
