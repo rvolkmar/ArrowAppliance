@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Arrow Appliance - Coming Soon</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="css/comingsoon.css"
+      rel="stylesheet"
+    />
+    <script>
+      // the stores phone number
+      var phoneNumber = "(417)-777-5296";
+
+      // the stores addresss
+      var address = "1805 W Broadway, Suite E, Bolivar MO 65613";
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Replace the src below with your actual logo file path -->
+      <img src="images/logos/blackandred.png" alt="Arrow Appliance Logo" class="logo" />
+      <h1>Coming Soon</h1>
+      <div class="message">
+        Arrow Appliance is almost here! <br />
+        We're preparing a brand new showroom with the latest in home appliances,
+        unbeatable prices, and exceptional service.<br />
+        Stay tuned for our grand opening!
+      <br>
+      </div>
+      <div class="info">
+        <strong id="address"></strong><br />
+        <a class="call-link"><strong id="phone"></strong></a><br />
+      </div>
+    </div>
+  <script>
+    window.onload = () => {
+      document.querySelector('#address').innerHTML = `Adress: <br /> ${address} <br />`;
+      document.querySelector('#phone').innerHTML = `Phone: <br /> ${phoneNumber}`;
+      document.querySelector('.call-link').href = `tel:${phoneNumber.replace(/[^0-9]/g, '')}`;
+    }
+  </script>
+  </body>
+</html>

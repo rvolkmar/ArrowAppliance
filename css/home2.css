@@ -76,11 +76,31 @@ body {
 }
 
 /* MOBILE NAVIGATION */
+
+.mobile-nav-div {
+  text-align: center;
+  justify-content: center;
+  height: fit-content;
+}
+ #mobile-menu {
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: scaleY(0.98);
+  transform-origin: top;
+  transition: all 0.3s ease;
+ }
+#mobile-menu.mobile-menu-open {
+  opacity: 1;
+  transform: scaleY(1);
+  height: 250px;
+  transition: all 0.3s ease;
+}
 .mobile-nav-links {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.35rem;
   padding: 1rem 0;
 }
 .mobile-nav-links a {
@@ -93,19 +113,6 @@ body {
   padding: 0.35rem;
   border: 2px solid black;
   border-radius: 2px;
-}
-.mobile-menu-right {
-  width: 10vw;
-}
-.mobile-nav {
-  transition: all 0.5s ease;
-  transform-origin: top;
-}
-.mobile-nav.hidden {
-  opacity: 0;
-  transform: scaleY(0);
-  height: 0;
-  overflow: hidden;
 }
 
 /* HERO */
@@ -181,7 +188,7 @@ body {
     box-shadow: 0 2px 5px rgba(0,0,0,0.5);
     transform: scale(1.11);
     /* transform: rotateZ(360deg); */
-    transition: all 0.7 ease;
+    transition: all 0.7s ease;
 }
 .brand-list img {
   max-width: 100%;
@@ -210,7 +217,7 @@ body {
 /* WHAT WE OFFER */
 .whatweoffer-section {
   width: 90vw;
-  background: rgba(255, 248, 248, 0.5);
+  background: linear-gradient(to right, #fff8f8, #f9f9f9);;
   max-width: 1100px;
   margin: 0 auto;
 }
@@ -316,23 +323,23 @@ body {
 }
 
 /* TO TOP BUTTON */
-#toTopBtn {
-    display: none; /* Hidden by default */
-    position: fixed; /* Fixed/sticky position */
-    bottom: 20px; /* Place the button at the bottom of the page */
-    right: 30px; /* Place the button 30px from the right */
-    z-index: 99; /* Make sure it does not overlap */
-    border: none; /* Remove borders */
-    outline: none; /* Remove outline */
-    background-color: #d62828; /* Set a background color */
-    color: white; /* Text color */
-    cursor: pointer; /* Add a mouse pointer on hover */
-    padding: 15px; /* Some padding */
-    border-radius: 10px; /* Rounded corners */
-    font-size: 18px; /* Increase font size */
+.to-top-button {
+  width: 50px;
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: #d62828; /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 18px; /* Increase font size */
 }
-#toTopBtn:hover {
-    background-color: #555; /* Add a dark-grey background on hover */
+.to-top-button:hover {
+    background-color: #a61b1b; /* Add a dark red bg color on hover */
 }
 
 /* Additional/misc styling */

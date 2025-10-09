@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="css/home2.css" />
   <script>
 
+    // ----------------- THE SAFE ZONE -----------------
     // DON'T EDIT ABOVE UNLESS YOU KNOW WHAT YOU'RE DOING -----------------------
     // THINGS YOU CAN MODIFY IF NEEDED BELOW -------------------------------------
 
@@ -17,7 +18,8 @@
     // the stores addresss
     var address = "1805 W Broadway, Suite E, Bolivar MO 65613";
 
-    // DON'T EDIT BELOW UNLESS YOU KNOW WHAT YOU'RE DOING -----------------------
+    // ----------------- THE DANGER ZONE -----------------
+    // DON'T EDIT ANYTHING BELOW UNLESS YOU KNOW WHAT YOU'RE DOING -----------------------
     window.onload = () => {
       document.getElementById('address').innerHTML = ' ' + address;
       document.getElementById('phone').innerHTML = ' ' + phoneNumber;
@@ -55,10 +57,12 @@
       </div>
     </div>
 
-    <!-- MOBILE MENU -->
-  <nav class="mobile-nav flex sm:hidden">
-          
-    <div class="hidden">
+  <!-- MOBILE MENU -->
+  <div class="mobile-nav-div flex sm:hidden">
+    
+    <!-- Leave the div there. It should collapse on its own. 
+    Only toggle the mobile-menu -->
+    <nav id="mobile-menu"> 
       <ul class="mobile-nav-links pl-4">
         <li><a href="#home">Home</a></li>
         <li><a href="#brands">Brands</a></li>
@@ -66,8 +70,8 @@
         <li><a href="#whatweoffer">What we offer</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-    </div>
-  </nav>
+    </nav>
+  </div>
 
   </header>
 
@@ -163,12 +167,11 @@
   </section>
 
   <!-- FLOATING TO TOP BUTTON UPON SCROLLING DOWN -->
-  <a href="#top" class="to-top-button" aria-label="Back to Top">
+  <a href="#top" class="to-top-button flex sm:hidden" aria-label="Back to Top">
     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
     </svg>
   </a>
-  
 
   <!-- FOOTER -->
   <footer class="footer">
@@ -178,25 +181,46 @@
     <p>&copy; 2025 Arrow Appliance. All rights reserved.</p>
   </footer>
 
-</body>
-</html>
-
-<script>
+  <script>
   // Mobile menu toggle
-  const btn = document.querySelector("button.mobile-menu-button");
-  const menu = document.querySelector("nav div.hidden");
+  const btn = document.querySelector(".mobile-menu-button");
+  const mobileNav = document.querySelector("#mobile-menu");
 
   btn.addEventListener("click", () => {
-    menu.classList.toggle("hidden");
+    mobileNav.classList.toggle("mobile-menu-open");
+    console.log('nav should have toggled.')
   });
 
   // listen for clicks outside the menu to close it
   document.addEventListener("click", (event) => {
-    const isClickInside = menu.contains(event.target) || btn.contains(event.target);
+    const isClickInside = mobileNav.contains(event.target) || btn.contains(event.target);
     if (!isClickInside) {
-      menu.classList.add("hidden");
+      mobileNav.classList.remove("mobile-menu-open");
+    }
+  });
+
+  // hide/show to top button on scroll but only on small/mobile screens
+  // also add border to "to top button" when it enters the footer bounds
+  const width = screen.width;
+  const toTopButton = document.querySelector(".to-top-button");
+  const footer = document.querySelector("footer.footer");
+  window.addEventListener("scroll", () => {
+    if ((window.scrollY > 300) && (width < 640)) {
+      toTopButton.style.display = "flex";
+    } else {
+      toTopButton.style.display = "none";
+    }
+    const footerRect = footer.getBoundingClientRect();
+    const buttonRect = toTopButton.getBoundingClientRect();
+    if (buttonRect.bottom >= footerRect.top) {
+      toTopButton.style.border = "2px solid white";
+    } else {
+      toTopButton.style.border = "none";
     }
   });
 
 
 </script>
+
+</body>
+</html>
