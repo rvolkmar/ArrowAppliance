@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Arrow Appliance</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="css/home2.css" />
+  <link rel="stylesheet" href="css/index.css" />
   <script>
 
     // ----------------- THE SAFE ZONE -----------------
@@ -17,6 +17,9 @@
 
     // the stores addresss
     var address = "1805 W Broadway, Suite E, Bolivar MO 65613";
+
+    // open house date
+    var Christmas_open_house_date = "Novemeber 14th - 15th, 2025";
 
     // ----------------- THE DANGER ZONE -----------------
     // DON'T EDIT ANYTHING BELOW UNLESS YOU KNOW WHAT YOU'RE DOING -----------------------
@@ -84,14 +87,46 @@
     </div>
   </section>
 
+  <!-- CHRISTMAS OPEN HOUSE -->
+  <section id="about" class="about-section">
+    <div class="container open-house-content">
+      <div class="open-house-img-container">
+        <span><img src="images/misc/grand_opening.png" alt="Christmas Open House" class="open-house-img w:full" />
+      </div>
+      <div class="font-semibold text-2xl">
+        <h2 class="text-5xl text-center mb-8">Grand Opening & Christmas Open House</h2>
+        <p>
+          Join us for our Grand Opening and Christmas Open House on Friday November 14th & Saturday November 15th! 
+          The celebration will begin with our Ribbon Cutting hosted by the Bolivar Chamber of Commerce at 10am on Friday. Enjoy our complimentary Hot Cocoa Bar and make sure to enter in your name for a chance to win a free Chest Freezer! The fun doesn’t stop there as we are excited to have Cleatus’ Corndogs serving up delicious food from 9am-2pm on Saturday in the Village Mall Shopping Center parking lot. The first 50 people to walk through the door on Saturday will receive a ticket for a free corndog on us! No purchase necessary!
+        </p>
+        <span class="flex gap-0 align-middle justify-center p-4 rounded-lg mt-6">
+          <img src="images/misc/freezer_giveaway.png" alt="Elisii Freezer" class="corn-dogs" />
+          <img src="images/logos/cleatuscorndogs.png" alt="Cleatus' Corndogs" class="corn-dogs rounded-full" />
+        </span>
+        <p class="mt-4 text-sm font-semibold">
+          *The winner of the Chest Freezer Giveaway will be announced on Saturday, November 15th on our Facebook page and will be contacted via email. You do not need to be present to win. Enter in-store or online. No purchase necessary.
+        </p>
+    </div>
+  </section>
+
   <!-- FEATURED BRANDS -->
   <section id="brands" class="brands-section">
     <h3 class="section-title">Featured Brands</h3>
     <ul class="brand-list">
       <li><img src="images/logos/ge.jpg" alt="GE" /></li>
-      <li><img src="images/logos/lg.png" alt="LG" /></li>
-      <li><img src="images/logos/frigidaire.png" alt="Frigidaire" /></li>
+      <li><img src="images/logos/geprofile.png" alt="GE Profile" /></li>
+      <li><img src="images/logos/hotpoint.png" alt="Hotpoint" /></li>
+      <li><img src="images/logos/cafe.png" alt="Cafe" /></li>
       <li><img src="images/logos/elisii.jpg" alt="Elisii" /></li>
+    </ul>
+  </section>
+
+  <!-- COMING SOON BRANDS -->
+  <section id="brands" class="brands-section">
+    <h3 class="section-title">Brands Comming Soon</h3>
+    <ul class="brand-list">
+      <li><img src="images/logos/frigidaire.png" alt="Frigidaire" /></li>
+      <li><img src="images/logos/speedqueen.png" alt="Speed Queen" /></li>
     </ul>
   </section>
 
@@ -218,6 +253,9 @@
       toTopButton.style.border = "none";
     }
   });
+
+  // update th christmas open house date
+  document.getElementById('Christmas_open_house_date').innerHTML = Christmas_open_house_date
 
 
 </script>
